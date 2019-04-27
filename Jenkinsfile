@@ -11,44 +11,40 @@ pipeline {
 		{
 			steps 
 			{
-				sh 'docker build -t vishnusaisankeerth/br:apiimg .'
-				sh 'docker build -t vishnusaisankeerth/br:sqlimg -f mysql.Dockerfile .'	
+				sh 'docker build -t yharshavardhan97/cheers2019:appimg .'
+				sh 'docker build -t yharshavardhan97/cheers2019:sqlimg -f mysql.Dockerfile .'	
 			}
 		} 
 
 		
-		stage('TEST')
-		{
-			parallel
-			{
-				stage("TEST - Running Test") 
-				{
-					steps 
-					{	
-						script 
-						{
-                                                      try
-							{
-							    sh 'docker-compose up -d'
-							    sh 'sleep 60'
-							    sh 'docker exec brproject_container mvn -f /usr/app test'
-							    currentBuild.result = 'SUCCESS'
-							    sh 'docker-compose stop'
-							}
-							catch(Exception ex) 
-							{
-								currentBuild.result = 'ABORTED'
-								sh 'docker-compose stop'
-								error('Test Cases Failed')
 
-							}
-							
-						}
+		stage("TEST - Running Test") 
+		{
+			steps 
+			{	
+				script 
+				{
+                                 try
+					{
+						sh 'docker-compose up -d'
+						sh 'sleep 60'
+						sh 'docker exec brproject_container mvn -f /usr/app test'
+						currentBuild.result = 'SUCCESS'
+						sh 'docker-compose stop'
+					}
+					catch(Exception ex) 
+					{
+						currentBuild.result = 'ABORTED'
+						sh 'docker-compose stop'
+						error('Test Cases Failed')
 
 					}
+							
 				}
+
 			}
 		}
+
 
 		stage('PUBLISH to DockerHub') 
 		{
