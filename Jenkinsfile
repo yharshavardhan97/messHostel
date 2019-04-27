@@ -57,8 +57,8 @@ pipeline {
 				sh 'docker rm brsql_container'
 				sh 'docker stop brproject_container'
 				sh 'docker rm brproject_container'
-				sh 'docker push vishnusaisankeerth/br:apiimg'
-	        		sh 'docker push vishnusaisankeerth/br:sqlimg'
+				sh 'docker push yharshavardhan97/cheers2019:appimg'
+	        		sh 'docker push yharshavardhan97/cheers2019:sqlimg'
 				
 	      		}
 		    }
