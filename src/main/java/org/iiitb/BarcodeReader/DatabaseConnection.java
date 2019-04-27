@@ -136,6 +136,7 @@ public class DatabaseConnection {
 		System.out.println(list);
 		return list;
 	}
+
 	public register get_student_date_status(String rollnumber,String currDate) {
 		java.sql.PreparedStatement preparedStatement = null;		
 		register register_object = new register();
@@ -192,6 +193,7 @@ public class DatabaseConnection {
 		}
 		return register_object;
 	}
+	
 	public ArrayList<register> get_Top5_Items(String rollnumber) {
 		ArrayList<register> list = new ArrayList<register>();
 		java.sql.PreparedStatement preparedStatement = null;		
