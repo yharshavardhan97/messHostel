@@ -63,7 +63,7 @@ public class DatabaseConnection {
 			System.out.println("Driver Not Found: " + e);
 		}
 
-		String url = "jdbc:mysql://db:3306/student_info?verifyServerCertificate=false&useSSL=true";
+		String url = "jdbc:mysql://db:3306/studentMess_info?verifyServerCertificate=false&useSSL=true";
 		System.out.println(url);
 		String user = "root";
 		String password = "harsha0507";

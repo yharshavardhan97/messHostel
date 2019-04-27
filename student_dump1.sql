@@ -1,6 +1,6 @@
 SET NAMES utf8;
 
-CREATE DATABASE IF NOT EXISTS student_info;
+CREATE DATABASE IF NOT EXISTS studentMess_info;
 GRANT ALL PRIVILEGES on student_info.*
 TO 'root'@'%' IDENTIFIED BY 'harsha0507'
 WITH GRANT OPTION;
