@@ -12,7 +12,7 @@ pipeline {
 			steps 
 			{
 				sh 'docker build -t yharshavardhan97/cheers2019:appimg .'
-				sh 'docker build -t yharshavardhan97/cheers2019:sqlimg -f mysql.Dockerfile .'	
+				sh 'docker build -t yharshavardhan97/cheers2019:sqlimg -f mysql.Dockerfile .'
 			}
 		} 
 
