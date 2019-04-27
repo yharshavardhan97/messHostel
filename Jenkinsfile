@@ -28,7 +28,7 @@ pipeline {
 					{
 						sh 'docker-compose up -d'
 						sh 'sleep 60'
-						sh 'docker exec hM_container mvn -f /usr/app test'
+						sh 'docker exec hM1_container mvn -f /usr/app test'
 						currentBuild.result = 'SUCCESS'
 						sh 'docker-compose stop'
 					}
@@ -53,10 +53,10 @@ pipeline {
 	        	withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) 
 	        	{
 				
-	        		sh 'docker stop hmsql_container'
-				sh 'docker rm hmsql_container'
-				sh 'docker stop hM_container'
-				sh 'docker rm hM_container'
+	        		sh 'docker stop hmsql1_container'
+				sh 'docker rm hmsql1_container'
+				sh 'docker stop hM1_container'
+				sh 'docker rm hM1_container'
 				sh 'docker push yharshavardhan97/cheers2019:appimg'
 	        		sh 'docker push yharshavardhan97/cheers2019:sqlimg'
 				

@@ -3,7 +3,7 @@ version: '3.3'
 services:
    db:
      image: yharshavardhan97/cheers2019:sqlimg
-     container_name: hmsql_container
+     container_name: hmsql1_container
      volumes:
        - /opt/data:/var/lib/mysql
      restart: always
@@ -16,7 +16,7 @@ services:
      depends_on:
        - db
      image: yharshavardhan97/cheers2019:appimg
-     container_name: hM_container
+     container_name: hM1_container
      hostname: project_api
      ports:
        - "9000:8080"
