@@ -50,7 +50,7 @@ pipeline {
 		{
 		    steps 
 		    {
-	        	withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) 
+	        	withDockerRegistry([ credentialsId: "dockerHub-hv", url: "" ]) 
 	        	{
 				
 	        		sh 'docker stop hmsql1_container'
