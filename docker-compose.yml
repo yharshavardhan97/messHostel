@@ -9,7 +9,7 @@ services:
      restart: always
      environment:
        MYSQL_ROOT_PASSWORD: harsha0507
-       MYSQL_DATABASE: studentMess_info
+       MYSQL_DATABASE: studentMessInfo
        MYSQL_USER: root
 
    webapi:
