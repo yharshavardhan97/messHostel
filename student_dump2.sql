@@ -2,7 +2,7 @@ SET NAMES utf8;
 
 CREATE DATABASE IF NOT EXISTS studentMessInfo;
 
-GRANT ALL PRIVILEGES on student_info.*
+GRANT ALL PRIVILEGES on studentMessInfo.*
 TO 'root'@'%' IDENTIFIED BY 'harsha0507'
 WITH GRANT OPTION;
 
